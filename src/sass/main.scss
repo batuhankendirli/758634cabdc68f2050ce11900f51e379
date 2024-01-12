@@ -5,4 +5,12 @@
 @import 'base/typography';
 @import 'base/utilities';
 
+@import 'components/favourites';
+@import 'components/navigation';
+@import 'components/product';
+@import 'components/search';
+
+@import 'layout/footer';
+@import 'layout/product-wrapper';
+
 @import 'pages/home';

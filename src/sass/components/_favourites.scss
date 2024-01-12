@@ -1,0 +1,21 @@
+.favourites {
+  &-btn {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    &-icon {
+      font-size: 3.2rem;
+      color: $color-btn;
+      transition: all 0.2s;
+    }
+
+    &:hover &-icon {
+      color: $color-btn-hover;
+      transform: scale(1.05);
+    }
+  }
+}

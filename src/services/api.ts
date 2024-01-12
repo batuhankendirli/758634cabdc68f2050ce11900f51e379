@@ -11,7 +11,7 @@ const getProducts = async () => {
         'X-Access-Token': accessToken,
       },
     });
-    return response.data;
+    return response.data.products;
   } catch (error) {
     console.error('Error fetching products: ', error);
     throw error;

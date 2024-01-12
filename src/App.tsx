@@ -1,25 +1,19 @@
-import { useEffect, useState } from 'react';
-import { getProducts } from './services/api';
+import Footer from './components/Footer';
+import Navbar from './components/Navbar';
+import Products from './components/Products/Products';
 
 const App = () => {
-  const [data, setData] = useState<any>(null);
-
-  // Gonna remove this later
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const products = await getProducts();
-        setData(products);
-      } catch (error) {
-        console.error('Error fetching products: ', error);
-      }
-    };
-    fetchData();
-  }, []);
-
-  console.log(data);
-
-  return <div>App</div>;
+  return (
+    <div>
+      <Navbar />
+      {/* // TODO: Add filtering, sorting  */}
+      <div className="home">
+        <Products />
+      </div>
+      {/* // TODO: Add pagination */}
+      <Footer />
+    </div>
+  );
 };
 
 export default App;

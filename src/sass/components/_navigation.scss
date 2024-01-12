@@ -1,0 +1,14 @@
+.navigation {
+  background-color: $color-bg-secondary;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2.4rem;
+  height: 8rem;
+  position: relative;
+
+  &-logo {
+    font-family: $font-kanit;
+    font-size: 3.2rem;
+  }
+}
