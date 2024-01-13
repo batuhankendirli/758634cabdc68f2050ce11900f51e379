@@ -1,9 +1,10 @@
 import axios from 'axios';
+import { GetProductsResponse } from '../types/ProductTypes';
 
 const apiURL: string = import.meta.env.VITE_API_URL;
 const accessToken: string = import.meta.env.VITE_ACCESS_TOKEN;
 
-const getProducts = async () => {
+const getProducts = async (): Promise<GetProductsResponse> => {
   try {
     const response = await axios.get(apiURL, {
       headers: {

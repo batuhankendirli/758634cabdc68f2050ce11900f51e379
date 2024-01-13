@@ -1,18 +1,30 @@
-import { useState } from 'react';
+import { useContext } from 'react';
 import { IoIosHeartEmpty, IoIosHeart } from 'react-icons/io';
+import { Context } from '../../Context';
+import { ProductCardProps } from '../../types/OtherTypes';
 
-// TODO: Add type for this component
-const ProductCard = ({ title, image, price, productType }) => {
-  // TODO: Get the state with localStorage
-  const [isFavourited, setIsFavourited] = useState(false);
+const ProductCard = ({
+  title,
+  image,
+  price,
+  productType,
+  productId,
+}: ProductCardProps) => {
+  const { favourites, setFavourites } = useContext(Context);
+  const isFavourited = favourites.includes(productId);
 
   const handleFavourite = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ) => {
     event.stopPropagation();
 
-    // TODO: Change this later, this is just for testing purposes!
-    setIsFavourited((prevState) => !prevState);
+    setFavourites((prevFavourites) => {
+      if (isFavourited) {
+        return prevFavourites.filter((fav) => fav !== productId);
+      } else {
+        return [...prevFavourites, productId];
+      }
+    });
   };
 
   const handleProductView = () => {

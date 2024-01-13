@@ -1,0 +1,22 @@
+.pagination-skeleton {
+  height: 8rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding-bottom: 3.2rem;
+
+  @include respond(phone) {
+    gap: 0.4rem;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &-circle {
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+}

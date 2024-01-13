@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <nav className="navigation">
       <p className="navigation-logo">BKCommerce</p>
-      <SearchBar />
+      <SearchBar mobile={false} />
       <Favourites />
     </nav>
   );

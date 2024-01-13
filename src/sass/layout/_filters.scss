@@ -1,0 +1,39 @@
+.filters {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  overflow-x: auto;
+  padding: 1.2rem 0;
+
+  &-sort {
+    font-family: inherit;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid $color-btn-secondary;
+    min-height: 3.6rem;
+    min-width: 3.6rem;
+    border-radius: 99rem;
+    background-color: white;
+    box-shadow: $box-shadow;
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      box-shadow: $box-shadow-hover;
+      transform: translateY(-0.3rem);
+    }
+  }
+
+  &-vertical {
+    background-color: rgba($color: #000000, $alpha: 0.1);
+    width: 2px;
+    height: 3.6rem;
+    margin: 0 1.6rem;
+
+    @include respond(tab-port) {
+      margin: 0 0.4rem;
+    }
+  }
+}

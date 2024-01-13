@@ -6,10 +6,17 @@
 @import 'base/utilities';
 
 @import 'components/favourites';
+@import 'components/filter-button';
 @import 'components/navigation';
+@import 'components/pagination';
+@import 'components/pagination-skeleton';
 @import 'components/product';
+@import 'components/product-skeleton';
 @import 'components/search';
+@import 'components/search-info';
 
+@import 'layout/filters';
+@import 'layout/filters-skeleton';
 @import 'layout/footer';
 @import 'layout/product-wrapper';
 
