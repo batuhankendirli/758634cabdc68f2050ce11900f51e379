@@ -35,7 +35,7 @@ interface ProductOption {
   values: string[];
 }
 
-interface ProductImage {
+export interface ProductImage {
   id: number;
   product_id: number;
   position: number;
@@ -49,7 +49,7 @@ interface ProductImage {
   admin_graphql_api_id: string;
 }
 
-interface Product {
+export interface Product {
   id: number;
   title: string;
   body_html: string;
