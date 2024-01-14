@@ -7,38 +7,12 @@
 }
 
 html {
-  font-size: 62.5%; // 10px
+  font-size: 62.5%;
   scroll-behavior: smooth;
-
-  @include respond(tab-land) {
-    font-size: 56.25%; // 9px
-  }
-
-  @include respond(tab-port) {
-    font-size: 50%; // 8px
-  }
-
-  @include respond(phone) {
-    font-size: 43.75%; // 7px
-  }
-
-  @include respond(phone-mini) {
-    font-size: 37.5%; // 6px
-  }
-
-  @include respond(big-desktop) {
-    font-size: 75%; // 12px
-  }
 }
 
 body {
   box-sizing: border-box;
   background-color: $color-bg;
   color: $color-text;
-}
-
-::selection {
-  // will add later
-  // background-color: #263645;
-  // color: #e5e5e5;
 }
