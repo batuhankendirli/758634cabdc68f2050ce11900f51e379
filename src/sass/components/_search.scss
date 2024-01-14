@@ -53,6 +53,7 @@
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    color: inherit;
 
     &-hidden {
       opacity: 0;
@@ -66,6 +67,7 @@
 
     &-icon {
       font-size: 2rem;
+      color: $color-text;
       will-change: transform;
       transition: all 0.2s;
     }

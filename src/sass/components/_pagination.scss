@@ -22,6 +22,7 @@
     border-radius: 50%;
     background-color: transparent;
     cursor: pointer;
+    color: inherit;
 
     &-disabled {
       cursor: auto;
@@ -33,6 +34,7 @@
       width: 4rem;
       border-radius: 50%;
       display: flex;
+      color: inherit;
       align-items: center;
       justify-content: center;
       transition: all 0.2s ease;
