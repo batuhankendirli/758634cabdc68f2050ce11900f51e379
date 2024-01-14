@@ -41,31 +41,31 @@ const ProductCard = ({
         productID={productId}
       />
       <div className="product" onClick={handleProductView}>
-        <div className="product-top">
-          <div className="product-top-wrapper">
-            <span className="product-top-wrapper-tag">{productType}</span>
+        <div className="product__top">
+          <div className="product__top-wrapper">
+            <span className="product__top-wrapper-tag">{productType}</span>
             <button
-              className="product-top-wrapper-btn"
+              className="product__top-wrapper-btn"
               onClick={(e) => handleFavourite(e)}
             >
               {isFavourited ? (
                 <IoIosHeart
-                  className="product-top-wrapper-btn-icon"
+                  className="product__top-wrapper-btn-icon"
                   color="#f26c6b"
                 />
               ) : (
-                <IoIosHeartEmpty className="product-top-wrapper-btn-icon" />
+                <IoIosHeartEmpty className="product__top-wrapper-btn-icon" />
               )}
             </button>
           </div>
           <img
-            className="product-top-img"
+            className="product__top-img"
             src={image}
             alt={`Image of ${title}`}
           />
         </div>
-        <p className="product-title">{title}</p>
-        <p className="product-price">${price}</p>
+        <p className="product__title">{title}</p>
+        <p className="product__price">${price}</p>
       </div>
     </>
   );

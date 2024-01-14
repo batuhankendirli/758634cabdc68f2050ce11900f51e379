@@ -9,12 +9,12 @@
     justify-content: center;
   }
 
-  &-img {
+  &__img {
     height: 24rem;
     border-radius: 1.2rem;
     margin-bottom: 1.6rem;
   }
-  &-title {
+  &__title {
     font-size: 1.6rem;
     font-weight: 400;
     width: 14rem;
@@ -22,7 +22,7 @@
     border-radius: 0.6rem;
     margin-bottom: 0.4rem;
   }
-  &-price {
+  &__price {
     font-size: 1.8rem;
     font-weight: 600;
     width: 10rem;

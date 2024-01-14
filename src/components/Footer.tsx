@@ -1,10 +1,10 @@
 const Footer = () => {
   return (
     <footer className="footer">
-      <p className="footer-text">
+      <p className="footer__text">
         Developed by{' '}
         <a
-          className="footer-text-link"
+          className="footer__text-link"
           href="https://batuhankendirli.netlify.app/"
           target="_blank"
         >

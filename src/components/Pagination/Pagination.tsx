@@ -63,7 +63,9 @@ const Pagination = ({ currentPage, totalPage }: PaginationProps) => {
   return (
     <div className="pagination">
       <button
-        className={`pagination-button ${currentPage === 1 ? 'disabled' : ''}`}
+        className={`pagination-button ${
+          currentPage === 1 ? 'pagination-button-disabled' : ''
+        }`}
         onClick={handlePrevPage}
         title="Previous page"
       >
@@ -77,7 +79,7 @@ const Pagination = ({ currentPage, totalPage }: PaginationProps) => {
         >
           <h3
             className={`pagination-button-number ${
-              currentPage === item ? 'active' : ''
+              currentPage === item ? 'pagination-button-number-active' : ''
             }`}
           >
             {item}
@@ -86,7 +88,7 @@ const Pagination = ({ currentPage, totalPage }: PaginationProps) => {
       ))}
       <button
         className={`pagination-button ${
-          currentPage === totalPage ? 'disabled' : ''
+          currentPage === totalPage ? 'pagination-button-disabled' : ''
         }`}
         onClick={handleNextPage}
         title="Next page"

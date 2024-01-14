@@ -1,5 +1,5 @@
 .favourites {
-  &-sidebar {
+  &__sidebar {
     width: 35rem;
 
     @include respond(tab-port) {
@@ -88,7 +88,7 @@
     }
   }
 
-  &-btn {
+  &__btn {
     background-color: transparent;
     border: none;
     display: flex;

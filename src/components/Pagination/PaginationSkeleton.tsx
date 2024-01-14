@@ -6,7 +6,7 @@ const PaginationSkeleton = () => {
       {Array(5)
         .fill(0)
         .map((_, i) => (
-          <Skeleton className="pagination-skeleton-circle" circle key={i} />
+          <Skeleton className="pagination-skeleton__circle" circle key={i} />
         ))}
     </div>
   );

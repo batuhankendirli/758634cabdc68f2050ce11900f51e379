@@ -34,8 +34,8 @@ const Favourites = () => {
 
   return (
     <div className="favourites">
-      <button className="favourites-btn" onClick={() => setFavsVisible(true)}>
-        <IoIosHeart className="favourites-btn-icon" />
+      <button className="favourites__btn" onClick={() => setFavsVisible(true)}>
+        <IoIosHeart className="favourites__btn-icon" />
       </button>
 
       <Modal
@@ -49,16 +49,16 @@ const Favourites = () => {
         header="Favourites"
         onHide={() => setFavsVisible(false)}
         position="right"
-        className="favourites-sidebar"
+        className="favourites__sidebar"
         pt={{
           content: {
-            className: 'favourites-sidebar-products',
+            className: 'favourites__sidebar-products',
           },
           header: {
-            className: 'favourites-sidebar-header',
+            className: 'favourites__sidebar-header',
           },
           closeIcon: {
-            className: 'modal-header-icon-close',
+            className: 'modal__header-icon-close',
           },
         }}
         blockScroll
@@ -68,33 +68,33 @@ const Favourites = () => {
             {favoriteProducts.map((product, index) => (
               <div
                 key={product.id}
-                className={`favourites-sidebar-products-item ${
+                className={`favourites__sidebar-products-item ${
                   index % 2 === 0 ? 'even' : ''
                 }`}
                 onClick={() => handleProductClick(product.id)}
               >
-                <div className="favourites-sidebar-products-item-img">
+                <div className="favourites__sidebar-products-item-img">
                   <img
                     src={product.image.src}
                     alt={`Photo of ${product.title}`}
-                    className="favourites-sidebar-products-item-img-src"
+                    className="favourites__sidebar-products-item-img-src"
                   />
                 </div>
-                <div className="favourites-sidebar-products-item-details">
-                  <div className="favourites-sidebar-products-item-details-left">
-                    <p className="favourites-sidebar-products-item-details-left-title">
+                <div className="favourites__sidebar-products-item-details">
+                  <div className="favourites__sidebar-products-item-details-left">
+                    <p className="favourites__sidebar-products-item-details-left-title">
                       {product.title}
                     </p>
-                    <p className="favourites-sidebar-products-item-details-left-price">
+                    <p className="favourites__sidebar-products-item-details-left-price">
                       ${product.variants[0].price}
                     </p>
                   </div>
                   <button
-                    className="product-top-wrapper-btn"
+                    className="product__top-wrapper-btn"
                     onClick={(e) => handleUnFavourite(e, product.id)}
                   >
                     <IoIosHeart
-                      className="product-top-wrapper-btn-icon"
+                      className="product__top-wrapper-btn-icon"
                       color="#f26c6b"
                     />
                   </button>
@@ -103,8 +103,8 @@ const Favourites = () => {
             ))}
           </>
         ) : (
-          <div className="favourites-sidebar-empty">
-            <p className="favourites-sidebar-empty-message">
+          <div className="favourites__sidebar-empty">
+            <p className="favourites__sidebar-empty-message">
               🌟 Elevate your shopping experience! Save your favorite items to
               your collection and enjoy quick access to the products you love.
               Click that heart icon now to build your personalized wishlist.

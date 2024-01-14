@@ -41,25 +41,25 @@ const SearchBar = ({ mobile }: { mobile: boolean }) => {
 
   return (
     <form
-      className={`search ${mobile ? 'mobile' : ''}`}
+      className={`search ${mobile ? 'search--mobile' : ''}`}
       onSubmit={(e) => handleSearch(e)}
     >
-      <button className="search-btn" onClick={() => handleSearch}>
-        <IoIosSearch className="search-btn-icon" />
+      <button className="search__btn" onClick={() => handleSearch}>
+        <IoIosSearch className="search__btn-icon" />
       </button>
       <input
         type="text"
         placeholder="Search..."
-        className="search-input"
+        className="search__input"
         value={search}
         onChange={(e) => handleChange(e)}
       />
 
       <button
-        className={`search-btn ${searchQuery ? '' : 'hidden'}`}
+        className={`search__btn ${searchQuery ? '' : 'search__btn-hidden'}`}
         onClick={handleClearSearchQuery}
       >
-        <IoCloseOutline className="search-btn-icon" />
+        <IoCloseOutline className="search__btn-icon" />
       </button>
     </form>
   );

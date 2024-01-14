@@ -3,14 +3,14 @@ import Skeleton from 'react-loading-skeleton';
 const ProductCardSkeleton = () => {
   return (
     <div className="product-skeleton">
-      <Skeleton className="product-skeleton-img" />
+      <Skeleton className="product-skeleton__img" />
       <div
         style={{
           display: 'flex',
           justifyContent: 'center',
         }}
       >
-        <Skeleton className="product-skeleton-title" />
+        <Skeleton className="product-skeleton__title" />
       </div>
       <div
         style={{
@@ -18,7 +18,7 @@ const ProductCardSkeleton = () => {
           justifyContent: 'center',
         }}
       >
-        <Skeleton className="product-skeleton-price" />
+        <Skeleton className="product-skeleton__price" />
       </div>
     </div>
   );

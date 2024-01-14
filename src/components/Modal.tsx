@@ -26,7 +26,7 @@ const Modal = ({ isVisible, onHide, productID }: ModalProps) => {
       <img
         src={item.src}
         alt={item.alt || `Image of ${product?.title}`}
-        className="modal-content-gallery-img"
+        className="modal__content-gallery-img"
       />
     );
   };
@@ -36,7 +36,7 @@ const Modal = ({ isVisible, onHide, productID }: ModalProps) => {
       <img
         src={item.src}
         alt={item.alt || `Image of ${product?.title}`}
-        className="modal-content-gallery-thumbnail-img"
+        className="modal__content-gallery-thumbnail-img"
       />
     );
   };
@@ -68,23 +68,23 @@ const Modal = ({ isVisible, onHide, productID }: ModalProps) => {
       draggable={false}
       className="modal"
       blockScroll
-      headerClassName="modal-header"
+      headerClassName="modal__header"
       pt={{
         headerTitle: {
-          className: 'modal-header-title',
+          className: 'modal__header-title',
         },
         closeButtonIcon: {
-          className: 'modal-header-icon-close',
+          className: 'modal__header-icon-close',
         },
         closeButton: {
-          className: 'modal-header-btn-close',
+          className: 'modal__header-btn-close',
         },
         maximizableIcon: {
-          className: 'modal-header-icon-maximize',
+          className: 'modal__header-icon-maximize',
         },
       }}
     >
-      <div className="modal-content">
+      <div className="modal__content">
         <Galleria
           value={images}
           numVisible={10}
@@ -96,70 +96,68 @@ const Modal = ({ isVisible, onHide, productID }: ModalProps) => {
           showThumbnailNavigators={false}
           pt={{
             previousItemButton: {
-              className: 'modal-content-gallery-img-prev',
+              className: 'modal__content-gallery-img-prev',
             },
             nextItemButton: {
-              className: 'modal-content-gallery-img-next',
+              className: 'modal__content-gallery-img-next',
             },
-
             item: {
-              className: 'modal-content-gallery-item',
+              className: 'modal__content-gallery-item',
             },
             itemContainer: {
-              className: 'modal-content-gallery-container',
+              className: 'modal__content-gallery-container',
             },
             thumbnailItems: {
-              className: 'modal-content-gallery-thumbnail-items',
+              className: 'modal__content-gallery-thumbnail-items',
             },
             thumbnailItem: {
-              className: 'modal-content-gallery-thumbnail-items-item',
+              className: 'modal__content-gallery-thumbnail-items-item',
             },
             thumbnailWrapper: {
-              className: 'modal-content-gallery-thumbnail-wrapper',
+              className: 'modal__content-gallery-thumbnail-wrapper',
             },
-
             thumbnailItemsContainer: {
-              className: 'modal-content-gallery-thumbnail-items-container',
+              className: 'modal__content-gallery-thumbnail-items-container',
             },
           }}
         />
-        <div className="modal-content-right">
-          <div className="modal-content-right-title">
-            <h1 className="modal-content-right-title-text">
+        <div className="modal__content-right">
+          <div className="modal__content-right-title">
+            <h1 className="modal__content-right-title-text">
               {product?.title} -{' '}
-              <span className="modal-content-right-title-text-vendor">
+              <span className="modal__content-right-title-text-vendor">
                 {product?.vendor}
               </span>
             </h1>
             <button
-              className="modal-content-right-title-btn product-top-wrapper-btn"
+              className="modal__content-right-title-btn product__top-wrapper-btn"
               onClick={(e) => handleFavourite(e)}
             >
               {isFavourited ? (
                 <IoIosHeart
-                  className="product-top-wrapper-btn-icon"
+                  className="product__top-wrapper-btn-icon"
                   color="#f26c6b"
                 />
               ) : (
-                <IoIosHeartEmpty className="product-top-wrapper-btn-icon" />
+                <IoIosHeartEmpty className="product__top-wrapper-btn-icon" />
               )}
             </button>
           </div>
 
           <hr />
 
-          <p className="modal-content-right-p">
+          <p className="modal__content-right-p">
             <strong>Product Type: </strong>
             {product?.product_type}
           </p>
-          <p className="modal-content-right-p">
+          <p className="modal__content-right-p">
             <strong>Price: </strong>$
             {
               product?.variants.find((variant) => variant.id === choosedVariant)
                 ?.price
             }
           </p>
-          <p className="modal-content-right-p">
+          <p className="modal__content-right-p">
             <strong>Weight: </strong>
             {product?.variants
               .find((variant) => variant.id === choosedVariant)
@@ -169,8 +167,8 @@ const Modal = ({ isVisible, onHide, productID }: ModalProps) => {
                 ?.weight_unit
             }
           </p>
-          <div className="modal-content-right-variants">
-            <p className="modal-content-right-p">
+          <div className="modal__content-right-variants">
+            <p className="modal__content-right-p">
               <strong>
                 {product?.variants.length > 1 ? 'Variants' : 'Variant'}:{' '}
               </strong>
@@ -179,7 +177,7 @@ const Modal = ({ isVisible, onHide, productID }: ModalProps) => {
               <button
                 key={variant.id}
                 onClick={() => handleVariantChoose(variant.id)}
-                className={`modal-content-right-variants-btn ${
+                className={`modal__content-right-variants-btn ${
                   variant.id === choosedVariant ? 'selected' : ''
                 }`}
               >
@@ -188,9 +186,9 @@ const Modal = ({ isVisible, onHide, productID }: ModalProps) => {
             ))}
           </div>
           <hr />
-          <h2 className="modal-content-right-heading">About</h2>
+          <h2 className="modal__content-right-heading">About</h2>
           <p
-            className="modal-content-right-description"
+            className="modal__content-right-description"
             dangerouslySetInnerHTML={{ __html: product?.body_html }}
           />
         </div>

@@ -23,7 +23,7 @@
     background-color: transparent;
     cursor: pointer;
 
-    &.disabled {
+    &-disabled {
       cursor: auto;
       color: rgba($color: $color-text, $alpha: 0.25);
     }
@@ -46,7 +46,7 @@
       }
     }
 
-    &-number.active {
+    &-number.pagination-button-number-active {
       background: $color-btn-secondary;
       height: 4.4rem;
       width: 4.4rem;

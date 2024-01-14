@@ -36,7 +36,7 @@ const Products = () => {
   return (
     <div className="products">
       {productsLoading ? (
-        <div className="products-wrapper">
+        <div className="products__wrapper">
           {Array(10)
             .fill(0)
             .map((_, i) => (
@@ -44,20 +44,20 @@ const Products = () => {
             ))}
         </div>
       ) : mappedProducts.length ? (
-        <div className="products-wrapper" ref={animationParent}>
+        <div className="products__wrapper" ref={animationParent}>
           {mappedProducts}
         </div>
       ) : (
-        <div className="products-empty">
-          <h1 className="products-empty-text">
+        <div className="products__empty">
+          <h1 className="products__empty-text">
             Oops! No matches found. Try different keywords.
           </h1>
           <button
-            className="products-empty-btn"
+            className="products__empty-btn"
             onClick={handleClearSearchQuery}
           >
             Clear
-            <IoTrash className="products-empty-btn-icon" />
+            <IoTrash className="products__empty-btn-icon" />
           </button>
         </div>
       )}

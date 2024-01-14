@@ -16,7 +16,7 @@
     display: none;
   }
 
-  &.mobile {
+  &--mobile {
     display: none;
     width: auto;
     @include respond(tab-port) {
@@ -29,7 +29,7 @@
     }
   }
 
-  &-input {
+  &__input {
     font-family: inherit;
     font-size: 1.6rem;
     width: 100%;
@@ -46,7 +46,7 @@
     }
   }
 
-  &-btn {
+  &__btn {
     background-color: transparent;
     border: none;
     display: flex;
@@ -54,7 +54,7 @@
     justify-content: center;
     cursor: pointer;
 
-    &.hidden {
+    &-hidden {
       opacity: 0;
       user-select: none;
       visibility: hidden;

@@ -27,7 +27,7 @@
     user-select: none;
   }
 
-  &.selected {
+  &--selected {
     background-color: $color-btn-secondary;
     color: white;
   }

@@ -1,5 +1,5 @@
 .products {
-  &-wrapper {
+  &__wrapper {
     flex: 1;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
@@ -11,7 +11,7 @@
     border-bottom: $border;
   }
 
-  &-empty {
+  &__empty {
     margin-top: 12rem;
     display: flex;
     flex-direction: column;

@@ -11,7 +11,9 @@ const FilterButton = ({ title }: { title: string }) => {
 
   return (
     <button
-      className={`filter-button ${productType === title ? 'selected' : ''}`}
+      className={`filter-button ${
+        productType === title ? 'filter-button--selected' : ''
+      }`}
       disabled={productType === title}
       onClick={handleFilterClick}
     >

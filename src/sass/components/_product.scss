@@ -3,11 +3,11 @@
   text-align: center;
   cursor: pointer;
 
-  &:hover &-top-img {
+  &:hover &__top-img {
     transform: scale(1.07);
   }
 
-  &-top {
+  &__top {
     position: relative;
     background-color: white;
     height: 24rem;
@@ -82,13 +82,13 @@
       transition: all 0.2s;
     }
   }
-  &-title {
+  &__title {
     font-size: 1.6rem;
     font-weight: 400;
     margin-bottom: 0.4rem;
   }
 
-  &-price {
+  &__price {
     font-size: 1.8rem;
     font-weight: 600;
   }

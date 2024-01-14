@@ -7,8 +7,8 @@ const SearchInfo = () => {
 
   return (
     <div className="search-info">
-      <span className="search-info-vertical" />
-      <h1 className="search-info-title">{h1Text}</h1>
+      <span className="search-info__vertical" />
+      <h1 className="search-info__title">{h1Text}</h1>
     </div>
   );
 };

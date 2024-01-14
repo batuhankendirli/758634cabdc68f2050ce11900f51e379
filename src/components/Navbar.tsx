@@ -4,7 +4,7 @@ import Favourites from './Favourites';
 const Navbar = () => {
   return (
     <nav className="navigation">
-      <p className="navigation-logo">BKCommerce</p>
+      <p className="navigation__logo">BKCommerce</p>
       <SearchBar mobile={false} />
       <Favourites />
     </nav>

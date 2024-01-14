@@ -41,10 +41,10 @@ const Filters = () => {
 
   return (
     <div className="filters">
-      <button className="filters-sort" onClick={handleSorting}>
+      <button className="filters__sort" onClick={handleSorting}>
         {sortOptions[sortOrder].icon}
       </button>
-      <span className="filters-vertical" />
+      <span className="filters__vertical" />
       {mappedButtons}
     </div>
   );
