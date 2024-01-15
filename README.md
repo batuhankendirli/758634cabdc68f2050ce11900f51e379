@@ -1,4 +1,4 @@
-# Weather App
+# BKCommerce
 
 Built with React, TypeScript, and SCSS.
 
