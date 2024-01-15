@@ -6,6 +6,7 @@ import {
   TiArrowSortedUp,
   TiArrowSortedDown,
 } from 'react-icons/ti';
+import Button from '../Button';
 
 const Filters = () => {
   const { products, sortOrder, setSortOrder, setActivePage } =
@@ -21,15 +22,15 @@ const Filters = () => {
 
   const sortOptions = {
     unsorted: {
-      icon: <TiArrowUnsorted />,
+      icon: <TiArrowUnsorted fontSize={'1.3rem'} />,
       next: 'asc',
     },
     asc: {
-      icon: <TiArrowSortedUp />,
+      icon: <TiArrowSortedUp fontSize={'1.3rem'} />,
       next: 'desc',
     },
     desc: {
-      icon: <TiArrowSortedDown />,
+      icon: <TiArrowSortedDown fontSize={'1.3rem'} />,
       next: 'unsorted',
     },
   };
@@ -41,9 +42,9 @@ const Filters = () => {
 
   return (
     <div className="filters">
-      <button className="filters__sort" onClick={handleSorting}>
+      <Button primary className="filters__sort" onClick={handleSorting}>
         {sortOptions[sortOrder].icon}
-      </button>
+      </Button>
       <span className="filters__vertical" />
       {mappedButtons}
     </div>

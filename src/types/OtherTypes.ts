@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ComponentPropsWithoutRef, ReactNode } from 'react';
 import { GetProductsResponse } from './ProductTypes';
 
 // ContextTypes
@@ -42,4 +42,23 @@ export interface ProductCardProps {
 export interface PaginationProps {
   currentPage: number;
   totalPage: number;
+}
+
+// Modal Type
+export interface ModalProps {
+  isVisible: boolean;
+  onHide: () => void;
+  productID: number;
+}
+
+// Button Type
+export interface ButtonProps extends ComponentPropsWithoutRef<'button'> {
+  children: ReactNode;
+  primary?: boolean;
+  heart?: boolean;
+  danger?: boolean;
+  circle?: boolean;
+  big?: boolean;
+  mid?: boolean;
+  selected?: boolean;
 }

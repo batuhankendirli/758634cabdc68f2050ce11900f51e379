@@ -1,0 +1,142 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  font-family: inherit;
+  font-weight: inherit;
+  border-radius: 99rem;
+  white-space: nowrap;
+  cursor: pointer;
+  will-change: translate;
+  transition: all 0.2s;
+
+  &-primary {
+    background-color: white;
+    box-shadow: $box-shadow;
+    font-size: 1.2rem;
+    border: $border-btn;
+
+    &.selected {
+      background-color: $color-btn;
+      color: white;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    &:hover {
+      box-shadow: $box-shadow-hover;
+      transform: translateY(-0.3rem);
+    }
+  }
+
+  &-heart {
+    background-color: #f7f7f7;
+    width: 3.2rem;
+    height: 3.2rem;
+
+    border: none;
+
+    &:hover {
+      background-color: #eeeeee;
+    }
+
+    &:hover &-icon {
+      transform: scale(1.05);
+    }
+
+    &-icon {
+      font-size: 2.4rem;
+      color: #c5c5c5;
+      will-change: transform;
+      transition: all 0.2s;
+    }
+  }
+
+  &-danger {
+    border: 2px solid $color-btn-secondary;
+    padding: 0.4rem 2rem;
+    font-weight: 400;
+    font-size: 1.6rem;
+    background-color: white;
+    color: $color-btn-secondary;
+    box-shadow: $box-shadow;
+    gap: 0.4rem;
+
+    &:hover {
+      box-shadow: $box-shadow-hover;
+      background-color: $color-btn-secondary-hover;
+      border-color: $color-btn-secondary-hover;
+      color: white;
+      transform: translateY(-0.3rem);
+    }
+
+    &:hover &-icon {
+      color: white;
+    }
+
+    &-icon {
+      color: $color-btn-secondary;
+      transition: all 0.2s;
+    }
+  }
+
+  &-circle {
+    font-size: 1.6rem;
+    border: none;
+    background-color: transparent;
+
+    & p {
+      font-weight: 600;
+    }
+
+    &-disabled {
+      cursor: auto;
+      color: rgba($color: $color-text, $alpha: 0.25);
+    }
+
+    &-number {
+      height: 4rem;
+      width: 4rem;
+      font-weight: 600;
+      border-radius: 50%;
+
+      color: inherit;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      transition: all 0.2s ease;
+
+      &:hover {
+        background-color: rgba($color: $color-btn-hover, $alpha: 0.5);
+      }
+
+      @include respond(phone) {
+        height: 3.6rem;
+        width: 3.6rem;
+      }
+    }
+
+    &-number.selected {
+      background: $color-btn;
+      color: white;
+
+      height: 4.4rem;
+      width: 4.4rem;
+
+      box-shadow: $box-shadow;
+    }
+  }
+
+  &-mid {
+    padding: 0.6rem 1.8rem;
+    font-weight: 600;
+  }
+  &-big {
+    padding: 0.8rem 2.4rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+  }
+}

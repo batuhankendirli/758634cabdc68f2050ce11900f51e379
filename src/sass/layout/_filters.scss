@@ -6,24 +6,8 @@
   padding: 1.2rem 0;
 
   &__sort {
-    font-family: inherit;
-    color: inherit;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 2px solid $color-btn-secondary;
     min-height: 3.6rem;
     min-width: 3.6rem;
-    border-radius: 99rem;
-    background-color: white;
-    box-shadow: $box-shadow;
-    cursor: pointer;
-    transition: all 0.2s;
-
-    &:hover {
-      box-shadow: $box-shadow-hover;
-      transform: translateY(-0.3rem);
-    }
   }
 
   &__vertical {

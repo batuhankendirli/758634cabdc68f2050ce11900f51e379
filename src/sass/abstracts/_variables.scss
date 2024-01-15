@@ -5,11 +5,11 @@ $color-bg-secondary: #dddfe6;
 $color-text: #252c41;
 $color-text-secondary: '';
 
-$color-btn: #f26c6b;
-$color-btn-hover: #f1404b;
+$color-btn: #9055a2;
+$color-btn-hover: #864f97;
 
-$color-btn-secondary: #9055a2;
-$color-btn-secondary-hover: #864f97;
+$color-btn-secondary: #f26c6b;
+$color-btn-secondary-hover: #f1404b;
 
 // BOX-SHADOW
 $box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
@@ -17,7 +17,7 @@ $box-shadow-hover: rgba(0, 0, 0, 0.24) 0px 4px 8px;
 
 // BORDER
 $border: 2px solid rgba(0, 0, 0, 0.05);
-$border-btn: 2px solid $color-btn-secondary;
+$border-btn: 2px solid $color-btn;
 
 // FONTS
 $font-kanit: 'Kanit', sans-serif;

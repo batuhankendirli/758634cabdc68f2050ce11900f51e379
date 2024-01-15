@@ -73,6 +73,11 @@
           justify-self: end;
         }
       }
+
+      &-btn {
+        align-self: center;
+        margin: 2.4rem 0;
+      }
     }
 
     &-empty {
@@ -98,12 +103,12 @@
 
     &-icon {
       font-size: 3.2rem;
-      color: $color-btn;
+      color: $color-btn-secondary;
       transition: all 0.2s;
     }
 
     &:hover &-icon {
-      color: $color-btn-hover;
+      color: $color-btn-secondary-hover;
       transform: scale(1.05);
     }
   }

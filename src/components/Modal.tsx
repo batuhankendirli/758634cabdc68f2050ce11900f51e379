@@ -4,12 +4,9 @@ import { Context } from '../Context';
 import { Galleria } from 'primereact/galleria';
 import { Product, ProductImage } from '../types/ProductTypes';
 import { IoIosHeart, IoIosHeartEmpty } from 'react-icons/io';
-
-interface ModalProps {
-  isVisible: boolean;
-  onHide: () => void;
-  productID: number;
-}
+import { ModalProps } from '../types/OtherTypes';
+import Button from './Button';
+import { toast } from 'react-toastify';
 
 const Modal = ({ isVisible, onHide, productID }: ModalProps) => {
   const { products, favourites, setFavourites } = useContext(Context);
@@ -52,8 +49,16 @@ const Modal = ({ isVisible, onHide, productID }: ModalProps) => {
 
     setFavourites((prevFavourites) => {
       if (isFavourited) {
+        toast.success('An item has been removed from your favorites.', {
+          autoClose: 3000,
+          toastId: 'delete_one_fav',
+        });
         return prevFavourites.filter((fav) => fav !== productID);
       } else {
+        toast.success('An item has been added to your favorites.', {
+          autoClose: 3000,
+          toastId: 'add_one_fav',
+        });
         return [...prevFavourites, productID];
       }
     });
@@ -129,19 +134,13 @@ const Modal = ({ isVisible, onHide, productID }: ModalProps) => {
                 {product?.vendor}
               </span>
             </h1>
-            <button
-              className="modal__content-right-title-btn product__top-wrapper-btn"
-              onClick={(e) => handleFavourite(e)}
-            >
+            <Button heart onClick={(e) => handleFavourite(e)}>
               {isFavourited ? (
-                <IoIosHeart
-                  className="product__top-wrapper-btn-icon"
-                  color="#f26c6b"
-                />
+                <IoIosHeart className="button-heart-icon" color="#f26c6b" />
               ) : (
-                <IoIosHeartEmpty className="product__top-wrapper-btn-icon" />
+                <IoIosHeartEmpty className="button-heart-icon" />
               )}
-            </button>
+            </Button>
           </div>
 
           <hr />
@@ -174,15 +173,15 @@ const Modal = ({ isVisible, onHide, productID }: ModalProps) => {
               </strong>
             </p>
             {product?.variants.map((variant) => (
-              <button
+              <Button
                 key={variant.id}
+                primary
+                mid
+                selected={variant.id === choosedVariant}
                 onClick={() => handleVariantChoose(variant.id)}
-                className={`modal__content-right-variants-btn ${
-                  variant.id === choosedVariant ? 'selected' : ''
-                }`}
               >
                 {variant.title}
-              </button>
+              </Button>
             ))}
           </div>
           <hr />

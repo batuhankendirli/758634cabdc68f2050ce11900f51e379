@@ -69,11 +69,11 @@
           top: 50%;
           transform: translateY(-50%);
           border-radius: 99rem;
-          background-color: rgba($color: $color-btn-secondary, $alpha: 0.5);
+          background-color: rgba($color: $color-btn, $alpha: 0.5);
           transition: all 0.2s;
 
           &:hover {
-            background-color: rgba($color: $color-btn-secondary, $alpha: 0.85);
+            background-color: rgba($color: $color-btn, $alpha: 0.85);
           }
         }
       }
@@ -139,9 +139,6 @@
             font-weight: 400;
           }
         }
-        &-btn {
-          margin: 0 !important;
-        }
       }
 
       &-variants {
@@ -149,36 +146,6 @@
         flex-wrap: wrap;
         gap: 0.8rem;
         align-items: center;
-
-        &-btn {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          padding: 0.6rem 1.8rem;
-          border-radius: 99rem;
-          border: $border-btn;
-          background-color: white;
-          color: inherit;
-          cursor: pointer;
-          font-family: inherit;
-          font-size: 1.2rem;
-          font-weight: 600;
-          box-shadow: $box-shadow;
-          white-space: nowrap;
-          transition: all 0.2s;
-
-          &:hover {
-            box-shadow: $box-shadow-hover;
-            transform: translateY(-0.3rem);
-          }
-
-          &.selected {
-            background-color: $color-btn-secondary;
-            color: white;
-            pointer-events: none;
-            user-select: none;
-          }
-        }
       }
     }
   }

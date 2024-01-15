@@ -3,6 +3,9 @@ import { Sidebar } from 'primereact/sidebar';
 import { useContext, useState } from 'react';
 import { Context } from '../Context';
 import Modal from './Modal';
+import Button from './Button';
+import { IoTrash } from 'react-icons/io5';
+import { toast } from 'react-toastify';
 
 const Favourites = () => {
   const [favsVisible, setFavsVisible] = useState(false);
@@ -13,6 +16,18 @@ const Favourites = () => {
   const favoriteProducts = products.filter((product) =>
     favourites.includes(product.id)
   );
+
+  const handleRemoveFavs = () => {
+    setFavourites([]);
+    setFavsVisible(false);
+    toast.success(
+      'Your favorited items have been cleared. Start adding new favorites!',
+      {
+        autoClose: 5000,
+        toastId: 'delete_favs',
+      }
+    );
+  };
 
   const handleProductClick = (id: number) => {
     setFavsVisible(false);
@@ -26,9 +41,12 @@ const Favourites = () => {
     productId: number
   ) => {
     event.stopPropagation();
-
     setFavourites((prevFavourites) => {
       return prevFavourites.filter((fav) => fav !== productId);
+    });
+    toast.success('An item has been removed from your favorites.', {
+      autoClose: 3000,
+      toastId: 'delete_one_fav',
     });
   };
 
@@ -89,18 +107,23 @@ const Favourites = () => {
                       ${product.variants[0].price}
                     </p>
                   </div>
-                  <button
-                    className="product__top-wrapper-btn"
+                  <Button
+                    heart
                     onClick={(e) => handleUnFavourite(e, product.id)}
                   >
-                    <IoIosHeart
-                      className="product__top-wrapper-btn-icon"
-                      color="#f26c6b"
-                    />
-                  </button>
+                    <IoIosHeart className="button-heart-icon" color="#f26c6b" />
+                  </Button>
                 </div>
               </div>
             ))}
+            <Button
+              danger
+              className="favourites__sidebar-products-btn"
+              onClick={handleRemoveFavs}
+            >
+              Remove All
+              <IoTrash className="button-danger-icon" />
+            </Button>
           </>
         ) : (
           <div className="favourites__sidebar-empty">

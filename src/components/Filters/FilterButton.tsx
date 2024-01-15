@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { Context } from '../../Context';
+import Button from '../Button';
 
 const FilterButton = ({ title }: { title: string }) => {
   const { productType, setProductType, setActivePage } = useContext(Context);
@@ -10,15 +11,14 @@ const FilterButton = ({ title }: { title: string }) => {
   };
 
   return (
-    <button
-      className={`filter-button ${
-        productType === title ? 'filter-button--selected' : ''
-      }`}
-      disabled={productType === title}
+    <Button
+      primary
+      big
+      selected={productType === title}
       onClick={handleFilterClick}
     >
       {title}
-    </button>
+    </Button>
   );
 };
 

@@ -3,6 +3,8 @@ import { IoIosHeartEmpty, IoIosHeart } from 'react-icons/io';
 import { Context } from '../../Context';
 import { ProductCardProps } from '../../types/OtherTypes';
 import Modal from '../Modal';
+import Button from '../Button';
+import { toast } from 'react-toastify';
 
 const ProductCard = ({
   title,
@@ -22,8 +24,16 @@ const ProductCard = ({
 
     setFavourites((prevFavourites) => {
       if (isFavourited) {
+        toast.success('An item has been removed from your favorites.', {
+          autoClose: 3000,
+          toastId: 'delete_one_fav',
+        });
         return prevFavourites.filter((fav) => fav !== productId);
       } else {
+        toast.success('An item has been added to your favorites.', {
+          autoClose: 3000,
+          toastId: 'add_one_fav',
+        });
         return [...prevFavourites, productId];
       }
     });
@@ -44,19 +54,17 @@ const ProductCard = ({
         <div className="product__top">
           <div className="product__top-wrapper">
             <span className="product__top-wrapper-tag">{productType}</span>
-            <button
+            <Button
+              heart
               className="product__top-wrapper-btn"
               onClick={(e) => handleFavourite(e)}
             >
               {isFavourited ? (
-                <IoIosHeart
-                  className="product__top-wrapper-btn-icon"
-                  color="#f26c6b"
-                />
+                <IoIosHeart className="button-heart-icon" color="#f26c6b" />
               ) : (
-                <IoIosHeartEmpty className="product__top-wrapper-btn-icon" />
+                <IoIosHeartEmpty className="button-heart-icon" />
               )}
-            </button>
+            </Button>
           </div>
           <img
             className="product__top-img"

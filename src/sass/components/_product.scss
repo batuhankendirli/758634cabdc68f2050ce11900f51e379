@@ -43,33 +43,8 @@
       }
 
       &-btn {
-        background-color: #f7f7f7;
-        border-radius: 99rem;
-        width: 3.2rem;
-        height: 3.2rem;
         margin-top: -0.8rem;
         margin-right: -0.8rem;
-        border: none;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        transition: all 0.2s;
-
-        &:hover {
-          background-color: #eeeeee;
-        }
-
-        &:hover &-icon {
-          transform: scale(1.05);
-        }
-
-        &-icon {
-          font-size: 2.4rem;
-          color: #c5c5c5;
-          will-change: transform;
-          transition: all 0.2s;
-        }
       }
     }
 

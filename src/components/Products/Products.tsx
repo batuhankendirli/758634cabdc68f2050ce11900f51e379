@@ -4,6 +4,7 @@ import ProductCard from './ProductCard';
 import { IoTrash } from 'react-icons/io5';
 import { useAutoAnimate } from '@formkit/auto-animate/react';
 import ProductCardSkeleton from './ProductCardSkeleton';
+import Button from '../Button';
 
 const Products = () => {
   const {
@@ -52,13 +53,10 @@ const Products = () => {
           <h1 className="products__empty-text">
             Oops! No matches found. Try different keywords.
           </h1>
-          <button
-            className="products__empty-btn"
-            onClick={handleClearSearchQuery}
-          >
+          <Button danger onClick={handleClearSearchQuery}>
             Clear
-            <IoTrash className="products__empty-btn-icon" />
-          </button>
+            <IoTrash className="button-danger-icon" />
+          </Button>
         </div>
       )}
     </div>

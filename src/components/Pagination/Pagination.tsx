@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Context } from '../../Context';
 import { PaginationProps } from '../../types/OtherTypes';
+import Button from '../Button';
 
 const Pagination = ({ currentPage, totalPage }: PaginationProps) => {
   const { setActivePage } = useContext(Context);
@@ -62,39 +63,33 @@ const Pagination = ({ currentPage, totalPage }: PaginationProps) => {
 
   return (
     <div className="pagination">
-      <button
-        className={`pagination-button ${
-          currentPage === 1 ? 'pagination-button-disabled' : ''
-        }`}
+      <Button
+        circle
+        className={currentPage === 1 ? 'button-circle-disabled' : ''}
         onClick={handlePrevPage}
         title="Previous page"
       >
-        <h3>&lt;</h3>
-      </button>
+        <p>&lt;</p>
+      </Button>
       {pageArr.map((item, index) => (
-        <button
-          className="pagination-button"
-          key={index}
-          onClick={() => handlePageClick(item, index)}
-        >
-          <h3
-            className={`pagination-button-number ${
-              currentPage === item ? 'pagination-button-number-active' : ''
+        <Button circle key={index} onClick={() => handlePageClick(item, index)}>
+          <p
+            className={`button-circle-number ${
+              currentPage === item ? 'selected' : ''
             }`}
           >
             {item}
-          </h3>
-        </button>
+          </p>
+        </Button>
       ))}
-      <button
-        className={`pagination-button ${
-          currentPage === totalPage ? 'pagination-button-disabled' : ''
-        }`}
+      <Button
+        circle
+        className={currentPage === totalPage ? 'button-circle-disabled' : ''}
         onClick={handleNextPage}
         title="Next page"
       >
-        <h3>&gt;</h3>
-      </button>
+        <p>&gt;</p>
+      </Button>
     </div>
   );
 };
